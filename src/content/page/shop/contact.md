@@ -1,9 +1,6 @@
 ---
 title: 店舗案内
 slug: shop
-menu:
-  main:
-    weight: 90
 ---
 
 # 店舗案内

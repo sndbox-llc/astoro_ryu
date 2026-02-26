@@ -1,17 +1,17 @@
 ---
 interface Props {
-  title?: string;
-  frontmatter?: any;
-  showBanner?: boolean; // ← これを追加！
+  title?: string
+  frontmatter?: any
+  showBanner?: boolean // ← これを追加！
 }
 
-import Navbar from "./Navbar.astro"; // 1. インポートする
-import Footer from "./Footer.astro"; // 1. インポート
-import TopBanner from "./TopBanner.astro"; // インポート
-import Sidebar from "./Sidebar.astro"; // サイドバーもインポート
-import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from './Navbar.astro' // 1. インポートする
+import Footer from './Footer.astro' // 1. インポート
+import TopBanner from './TopBanner.astro' // インポート
+import Sidebar from './Sidebar.astro' // サイドバーもインポート
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-const { title, frontmatter, showBanner = true } = Astro.props;
+const { title, frontmatter, showBanner = true } = Astro.props
 ---
 
 <!doctype html>
@@ -23,8 +23,8 @@ const { title, frontmatter, showBanner = true } = Astro.props;
   <body>
     <style>
       @font-face {
-        font-family: "Diana";
-        src: url("/fonts/diana-bold.ttf") format("truetype");
+        font-family: 'Diana';
+        src: url('/fonts/diana-bold.ttf') format('truetype');
         font-weight: bold;
         font-style: normal;
       }
@@ -44,7 +44,7 @@ const { title, frontmatter, showBanner = true } = Astro.props;
     <Footer />
 
     <script>
-      import "bootstrap/dist/js/bootstrap.bundle.min.js";
+      import 'bootstrap/dist/js/bootstrap.bundle.min.js'
     </script>
   </body>
 </html>

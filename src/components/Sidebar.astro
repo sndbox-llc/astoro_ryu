@@ -1,36 +1,27 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content'
 
-const allBlogPosts = await getCollection("blog");
+const allBlogPosts = await getCollection('blog')
 
 // 配列を一度コピーしてからソートする（これが重要！）
 const sortedPosts = [...allBlogPosts].sort((a, b) => {
-  const dateA = new Date(a.data.date).getTime();
-  const dateB = new Date(b.data.date).getTime();
+  const dateA = new Date(a.data.date).getTime()
+  const dateB = new Date(b.data.date).getTime()
 
   // 新しい順（降順）なら B - A
-  return dateB - dateA;
-});
+  return dateB - dateA
+})
 ---
 
-<div
-  class="p-4 my-5 rounded text-white"
-  style="background: linear-gradient(to bottom, #5a7d3b, #3b5e1e);"
->
-  <h5 class="mb-3" style="font-family: 'Hiragino Mincho ProN', serif;">
-    お問い合わせ
-  </h5>
+<div class="p-4 my-5 rounded text-white" style="background: linear-gradient(to bottom, #5a7d3b, #3b5e1e);">
+  <h5 class="mb-3" style="font-family: 'Hiragino Mincho ProN', serif;">お問い合わせ</h5>
   <p class="mb-1">
     本店　
-    <a href="tel:0286539880" class="text-white text-decoration-none fw-bold">
-      028-653-9880
-    </a>
+    <a href="tel:0286539880" class="text-white text-decoration-none fw-bold"> 028-653-9880 </a>
   </p>
   <p class="mb-0">
     中央店　
-    <a href="tel:0286381828" class="text-white text-decoration-none fw-bold">
-      028-638-1828
-    </a>
+    <a href="tel:0286381828" class="text-white text-decoration-none fw-bold"> 028-638-1828 </a>
   </p>
 </div>
 
@@ -38,67 +29,30 @@ const sortedPosts = [...allBlogPosts].sort((a, b) => {
   <h5 class="fw-bold mb-2 text-center">スタッフ募集中！</h5>
   <p class="text-center mb-3">未経験でもOKです！</p>
   <div class="text-center">
-    <a
-      href="tel:0286381828"
-      class="d-inline-block px-4 py-2 rounded bg-light text-dark fw-bold text-decoration-none"
-    >
-      TEL 028-638-1828
-    </a>
+    <a href="tel:0286381828" class="d-inline-block px-4 py-2 rounded bg-light text-dark fw-bold text-decoration-none"> TEL 028-638-1828 </a>
   </div>
 </div>
 
-<div
-  class="p-4 my-5 rounded text-white"
-  style="background: linear-gradient(to bottom, #833ab4, #fd1d1d, #fcb045);"
->
+<div class="p-4 my-5 rounded text-white" style="background: linear-gradient(to bottom, #833ab4, #fd1d1d, #fcb045);">
   <h5 class="fw-bold mb-2 text-center">Hair Salon Instagram</h5>
   <p class="text-center mb-3">最新スタイルやお店の雰囲気を発信中📸</p>
   <div class="text-center">
-    <a
-      href="https://www.instagram.com/hair.salon.ryu/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="d-inline-block px-4 py-2 rounded bg-light text-dark fw-bold text-decoration-none"
-    >
-      フォローする
-    </a>
+    <a href="https://www.instagram.com/hair.salon.ryu/" target="_blank" rel="noopener noreferrer" class="d-inline-block px-4 py-2 rounded bg-light text-dark fw-bold text-decoration-none"> フォローする </a>
   </div>
 </div>
 
-<div
-  class="p-4 my-5 rounded text-white"
-  style="background: linear-gradient(to bottom, #833ab4, #fd1d1d, #fcb045);"
->
+<div class="p-4 my-5 rounded text-white" style="background: linear-gradient(to bottom, #833ab4, #fd1d1d, #fcb045);">
   <h5 class="fw-bold mb-2 text-center">SAYO Instagram</h5>
-  <p class="text-center mb-3">
-    ネイリストSAYOの最新ネイルデザインやサロンの様子を発信中💅
-  </p>
+  <p class="text-center mb-3">ネイリストSAYOの最新ネイルデザインやサロンの様子を発信中💅</p>
   <div class="text-center">
-    <a
-      href="https://www.instagram.com/sayo_nailist_ryu?igsh=MXR0a2c2YmZmb3F1OA=="
-      target="_blank"
-      rel="noopener noreferrer"
-      class="d-inline-block px-4 py-2 rounded bg-light text-dark fw-bold text-decoration-none"
-    >
-      フォローする
-    </a>
+    <a href="https://www.instagram.com/sayo_nailist_ryu?igsh=MXR0a2c2YmZmb3F1OA==" target="_blank" rel="noopener noreferrer" class="d-inline-block px-4 py-2 rounded bg-light text-dark fw-bold text-decoration-none"> フォローする </a>
   </div>
 </div>
 
-<div
-  class="p-4 my-5 rounded text-white"
-  style="background: linear-gradient(to bottom, #4b6cb7, #182848);"
->
+<div class="p-4 my-5 rounded text-white" style="background: linear-gradient(to bottom, #4b6cb7, #182848);">
   <h5 class="fw-bold mb-2 text-center">隆BLOG 更新中</h5>
   <p class="text-center mb-3">お知らせやコラムをゆったり発信中です📝</p>
   <div class="text-center">
-    <a
-      href="http://ryu9880.blog21.fc2.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="d-inline-block px-4 py-2 rounded bg-light text-dark fw-bold text-decoration-none"
-    >
-      ブログを見る
-    </a>
+    <a href="http://ryu9880.blog21.fc2.com/" target="_blank" rel="noopener noreferrer" class="d-inline-block px-4 py-2 rounded bg-light text-dark fw-bold text-decoration-none"> ブログを見る </a>
   </div>
 </div>
