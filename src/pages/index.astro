@@ -1,11 +1,9 @@
 ---
-// src/pages/index.astro
 import Layout from '../components/Layout.astro' // Layoutをインポート
 // 必要ならここで getCollection してブログ一覧のデータを取る
 const showBanner = true // トップページ専用のバナーを表示するためのフラグ
 
 import { getCollection } from 'astro:content'
-// import Layout from "../components/Layout.astro";
 
 const allBlogPosts = await getCollection('blog')
 
@@ -27,7 +25,7 @@ const sortedPosts = [...allBlogPosts].sort((a, b) => {
         <div class="card h-100 shadow-sm">
           <img src="/images/shop/honten.jpg" class="card-img-top" alt="本店外観" />
           <div class="card-body">
-            <h5 style="color:#5a6699;" class="card-title" id="honten">本店</h5>
+            <h5 class="ryuColor card-title bold" id="honten">本店</h5>
             <p class="card-text">
               〒321-0132 栃木県宇都宮市雀の宮4-2-8<br />
               TEL：<a href="tel:0286539880">028-653-9880</a>
@@ -50,7 +48,7 @@ const sortedPosts = [...allBlogPosts].sort((a, b) => {
         <div class="card h-100 shadow-sm">
           <img src="/images/shop/chuo1.jpg" class="card-img-top" alt="中央店外観" />
           <div class="card-body">
-            <h5 style="color:#5a6699;" class="card-title" id="chuoten">中央店</h5>
+            <h5 class="ryuColor card-title bold" id="chuoten">中央店</h5>
             <p class="card-text">
               〒320-0863 栃木県宇都宮市操町4-11<br />
               TEL：<a href="tel:0286381828">028-638-1828</a>
@@ -71,7 +69,7 @@ const sortedPosts = [...allBlogPosts].sort((a, b) => {
   </div>
 
   <section class="news-section container">
-    <h2 class="section-title">新着情報</h2>
+    <h2 class="section-title ryuColor">新着情報</h2>
 
     <div class="news-grid">
       {
@@ -81,69 +79,10 @@ const sortedPosts = [...allBlogPosts].sort((a, b) => {
               <h3 class="post-title">{post.data.title}</h3>
               <p class="post-excerpt">{post.data.description || '記事の内容を読む'}</p>
             </div>
-            <small>{post.data.date.toLocaleDateString('ja-JP')}</small>
+            <small class="ryuColor">{post.data.date.toLocaleDateString('ja-JP')}</small>
           </a>
         ))
       }
     </div>
   </section>
-
-  <style lang="scss">
-    .news-section {
-      padding: 4rem 0;
-
-      .section-title {
-        text-align: center;
-        color: #8d87bd; // ナビバーと合わせたパープル
-        font-size: 2rem;
-        margin-bottom: 3rem;
-        font-weight: 500;
-      }
-    }
-
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .news-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 2rem;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      text-decoration: none;
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-      background: #fff;
-
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-      }
-
-      .post-title {
-        color: #8d87bd;
-        font-size: 1.4rem;
-        font-weight: bold;
-        margin-bottom: 1.5rem;
-        line-height: 1.4;
-      }
-
-      .post-excerpt {
-        color: #333;
-        font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: 2rem;
-      }
-
-      .post-date {
-        color: #888;
-        font-size: 0.9rem;
-      }
-    }
-  </style>
 </Layout>

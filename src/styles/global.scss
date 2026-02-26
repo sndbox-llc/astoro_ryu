@@ -1,0 +1,39 @@
+@use "variables" as var; // 'var'という名前でアクセスできるようにします
+
+@use "fonts";
+@use 'newsCard';
+
+// BootstrapをSCSSとして読み込む（変数の上書きが可能になります）
+@import "bootstrap/scss/bootstrap";
+
+// サイト全体の共通調整
+
+body {
+  // サイト全体に適用（優先度：低）
+  font-family: var.$font-base;
+  color: #444;
+  line-height: 1.8;
+  background-color: var.$ryu-bg-light;
+}
+
+.myFont {
+  font-family: var.$font-accent, sans-serif;
+}
+
+.ryuColor {
+  color: var.$ryu-purple;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/** タイトルチェックボックス */
+.blankCheckbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var.$ryu-purple;
+  margin-right: 10px;
+  background: #fff;
+}

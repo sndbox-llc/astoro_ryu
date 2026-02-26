@@ -1,0 +1,58 @@
+@use "variables" as var; // 'var'という名前でアクセスできるようにします
+
+.news-section {
+  padding: 4rem 0;
+
+  .section-title {
+    text-align: center;
+    color: var.$ryu-purple; // ナビバーと合わせたパープル
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 500;
+  }
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  background: #fff;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .post-title {
+    color: var.$ryu-purple;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .post-excerpt {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .post-date {
+    color: var.$ryu-bg-light;
+    font-size: 0.9rem;
+  }
+}
