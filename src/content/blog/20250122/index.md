@@ -2,7 +2,7 @@
 title: ネットからの予約方法が変更されました
 description: スマホから簡単にお店の予約ができます。
 date: 2025-01-22T13:00:00
-images: ['app.png']
+slug: blog/20250122
 ---
 
 ![予約アプリ](app.png)
