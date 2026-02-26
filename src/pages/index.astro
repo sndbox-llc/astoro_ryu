@@ -1,0 +1,191 @@
+---
+// src/pages/index.astro
+import Layout from "../components/Layout.astro"; // Layoutをインポート
+// 必要ならここで getCollection してブログ一覧のデータを取る
+const showBanner = true; // トップページ専用のバナーを表示するためのフラグ
+
+import { getCollection } from "astro:content";
+// import Layout from "../components/Layout.astro";
+
+const allBlogPosts = await getCollection("blog");
+
+// 配列を一度コピーしてからソートする（これが重要！）
+const sortedPosts = [...allBlogPosts].sort((a, b) => {
+  const dateA = new Date(a.data.date).getTime();
+  const dateB = new Date(b.data.date).getTime();
+
+  // 新しい順（降順）なら B - A
+  return dateB - dateA;
+});
+---
+
+<Layout frontmatter={{ title: "トップページ" }} showBanner={true}>
+  <div class="container my-5">
+    <div class="row g-4">
+      <!-- 本店 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="/images/shop/honten.jpg"
+            class="card-img-top"
+            alt="本店外観"
+          />
+          <div class="card-body">
+            <h5 style="color:#5a6699;" class="card-title" id="honten">本店</h5>
+            <p class="card-text">
+              〒321-0132 栃木県宇都宮市雀の宮4-2-8<br />
+              TEL：<a href="tel:0286539880">028-653-9880</a>
+            </p>
+          </div>
+          <div class="card-footer bg-white border-0">
+            <div class="ratio ratio-4x3">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3207.452887028724!2d139.86995401324768!3d36.49492838472994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f5cdf07ab62c9%3A0x3d78a34646f465ea!2z44CSMzIxLTAxMzIg5qCD5pyo55yM5a6H6YO95a6u5biC6ZuA44Gu5a6u77yU5LiB55uu77yS4oiS77yY!5e0!3m2!1sja!2sjp!4v1744854006783!5m2!1sja!2sjp"
+                width="380"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <!-- ホットペッパービューティーボタン -->
+          <div class="text-center my-4">
+            <a
+              href="https://szut8d.b-merit.jp/g8xvfm/web"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-lg px-5 py-3 rounded-pill shadow-sm custom-reserve-btn"
+              style="background: linear-gradient(135deg, #7684C2 0%, #A2ADD0 100%);color: #ffffff;border: none;font-weight: bold;letter-spacing: 0.1em;transition: all 0.3s ease;"
+            >
+              本店ネット予約
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 中央店 -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="/images/shop/chuo1.jpg"
+            class="card-img-top"
+            alt="中央店外観"
+          />
+          <div class="card-body">
+            <h5 style="color:#5a6699;" class="card-title" id="chuoten">
+              中央店
+            </h5>
+            <p class="card-text">
+              〒320-0863 栃木県宇都宮市操町4-11<br />
+              TEL：<a href="tel:0286381828">028-638-1828</a>
+            </p>
+          </div>
+          <div class="card-footer bg-white border-0">
+            <div class="ratio ratio-4x3">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3204.8145394204116!2d139.8684998132486!3d36.55858448116363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f67c66c633ff7%3A0x338ab8e1da429593!2z44CSMzIwLTA4NjMg5qCD5pyo55yM5a6H6YO95a6u5biC5pON55S677yU4oiS77yR77yR!5e0!3m2!1sja!2sjp!4v1744854079802!5m2!1sja!2sjp"
+                width="380"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <!-- ホットペッパービューティーボタン -->
+          <div class="text-center my-4">
+            <a
+              href="https://szut8d.b-merit.jp/xf2h97/web/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-lg px-5 py-3 rounded-pill shadow-sm custom-reserve-btn"
+              style="background: linear-gradient(135deg, #7684C2 0%, #A2ADD0 100%);color: #ffffff;border: none;font-weight: bold;letter-spacing: 0.1em;transition: all 0.3s ease;"
+            >
+              中央店ネット予約
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="news-section container">
+    <h2 class="section-title">新着情報</h2>
+
+    <div class="news-grid">
+      {
+        sortedPosts.map((post) => (
+          <a href={post.slug} class="news-card">
+            <div class="card-content">
+              <h3 class="post-title">{post.data.title}</h3>
+              <p class="post-excerpt">
+                {post.data.description || "記事の内容を読む"}
+              </p>
+            </div>
+            <small>{post.data.date.toLocaleDateString("ja-JP")}</small>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <style lang="scss">
+    .news-section {
+      padding: 4rem 0;
+
+      .section-title {
+        text-align: center;
+        color: #8d87bd; // ナビバーと合わせたパープル
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        font-weight: 500;
+      }
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .news-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+      background: #fff;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .post-title {
+        color: #8d87bd;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
+      }
+
+      .post-excerpt {
+        color: #333;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
+
+      .post-date {
+        color: #888;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</Layout>
