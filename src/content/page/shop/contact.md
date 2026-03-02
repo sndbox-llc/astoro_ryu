@@ -5,7 +5,6 @@ slug: shop
 
 # 店舗案内
 
-
 <div class="container">
 
 <div class="row mb-4 align-items-center">
@@ -14,10 +13,16 @@ slug: shop
   </div>
   <div class="col-md-7">
     <h2 class="" style="color:#5a6699;">本店</h2>
-    <p><strong>営業時間：</strong> 9:00〜17:00</p>
-    <p><strong>定休日：</strong> 毎週火曜・第ニ月曜</p>
-    <p><strong>駐車場：</strong> 店舗南側 12台</p>
-    <p><strong>予約電話：</strong> <a href="tel:0286539880">028-653-9880</a></p>
+    <dl class="basic">
+      <dt>営業時間</dt>
+      <dd>9:00〜17:00</dd>
+      <dt>定休日</dt>
+      <dd>毎週火曜・第ニ月曜</dd>
+      <dt>駐車場</dt>
+      <dd>店舗南側 12台</dd>
+      <dt>予約電話</dt>
+      <dd><a href="tel:0286539880">028-653-9880</a></dd>
+    </dl>
     <a class="btn btn-outline-primary" href="https://szut8d.b-merit.jp/g8xvfm/web" role="button">ネット予約はこちら</a>
     <p class="text-muted small">※早朝予約（+30分ごとに¥1100）も承ります。</p>
   </div>
@@ -59,9 +64,6 @@ slug: shop
 
 </div>
 
-
-
-
 <hr>
 
 <div class="row mb-4 align-items-center">
@@ -70,26 +72,31 @@ slug: shop
   </div>
   <div class="col-md-7">
     <h2 class="" style="color:#5a6699;">中央店</h2>
-    <p><strong>営業時間：</strong> 9:00〜17:00</p>
-    <p><strong>定休日：</strong> 毎週火曜・第ニ月曜</p>
-    <p><strong>駐車場：</strong> 12台</p>
-    <p><strong>電話番号：</strong> <a href="tel:0286381828">028-638-1828</a></p>
+    <dl class="basic">
+      <dt>営業時間</dt>
+      <dd> 9:00〜17:00</dd>
+      <dt>定休日</dt>
+      <dd>毎週火曜・第ニ月曜</dd>
+      <dt>駐車場</dt>
+      <dd>12台</dd>
+      <dt>電話番号</dt>
+      <dd><a href="tel:0286381828">028-638-1828</a></dd>
+    </dl>
     <a class="btn btn-outline-primary" href="https://szut8d.b-merit.jp/xf2h97/web" role="button">ネット予約はこちら</a>
     <p class="text-muted small">※早朝予約（+30分ごとに¥1100）も承ります。</p>
-
   </div>
 </div>
 
 <div class="row mb-4">
   <div class="col-md-12">
+    <p class="text-muted">
+      セット面８台、シャンプー台3面、ネイルスペース２面、アイリストスペース１部屋。<br>
+      まつげパーマ・アイブロウ(眉)・マツエク・パリジェンヌなど豊富なメニューを取り揃えてます。<br>
+      ネイル＝パラジェルの正しい技術と知識の習得を認められたスタッフが在籍しているパラジェル登録店。
+    </p>
+  </div>
+</div>
 
-<p class="text-muted">
-セット面８台、シャンプー台3面、ネイルスペース２面、アイリストスペース１部屋。<br>
-まつげパーマ・アイブロウ(眉)・マツエク・パリジェンヌなど豊富なメニューを取り揃えてます。<br>
-ネイル＝パラジェルの正しい技術と知識の習得を認められたスタッフが在籍しているパラジェル登録店。
-</p>
-</div>
-</div>
 <div class="row g-3 mb-4">
   <div class="col-md-4">
     <img src="/images/shop/chuoNaisou1.jpg" alt="受付" class="img-fluid rounded shadow-sm">
@@ -98,6 +105,7 @@ slug: shop
     <img src="/images/shop/chuoNaisou2.jpg" alt="待合" class="img-fluid rounded shadow-sm">
   </div>
 </div>
+
 <div class="row mb-4">
   <div class="col-md-6">
     <h5 class="text-center">駐車場</h5>

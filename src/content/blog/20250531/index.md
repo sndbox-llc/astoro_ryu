@@ -9,7 +9,10 @@ slug: blog/20240531
 
 改定後の料金表
 
-![価格改定後の料金表1](p1.jpg)
-![価格改定後の料金表2](p2.jpg)
-![価格改定後の料金表3](p3.jpg)
+
+
+![Image](./menu1.webp)
+![Image](./menu2.webp)
+![Image](./menu3.webp)
+
 

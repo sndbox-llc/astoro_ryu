@@ -4,9 +4,10 @@ slug: menu
 ---
 
 
-![Image](/images/menu/menu1.jpg)
-![Image](/images/menu/menu2.jpg)
-![Image](/images/menu/menu3.jpg)
+
+![Image](./menu1.webp)
+![Image](./menu2.webp)
+![Image](./menu3.webp)
 
 
 <style>

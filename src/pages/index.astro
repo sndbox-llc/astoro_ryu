@@ -73,7 +73,7 @@ const sortedPosts = [...allBlogPosts].sort((a, b) => {
               <h3 class="post-title">{post.data.title}</h3>
               <p class="post-excerpt">{post.data.description || '記事の内容を読む'}</p>
             </div>
-            <small class="ryuColor">{post.data.date.toLocaleDateString('ja-JP')}</small>
+            <p class="ryuColor small">{post.data.date.toLocaleDateString('ja-JP')}</p>
           </a>
         ))
       }

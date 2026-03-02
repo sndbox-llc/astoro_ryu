@@ -8,7 +8,6 @@
 // サイト全体の共通調整
 
 body {
-  // サイト全体に適用（優先度：低）
   font-family: var.$font-base;
   color: #444;
   line-height: 1.8;
@@ -39,4 +38,5 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
 }
