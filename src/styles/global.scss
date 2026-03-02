@@ -1,8 +1,9 @@
 @use "variables" as var; // 'var'という名前でアクセスできるようにします
 @use "fonts";
 @use 'newsCard';
+@use 'dl';
 
-// BootstrapをSCSSとして読み込む（変数の上書きが可能になります）
+
 @import "bootstrap/scss/bootstrap";
 
 // サイト全体の共通調整
@@ -35,4 +36,8 @@ body {
   border: 2px solid var.$ryu-purple;
   margin-right: 10px;
   background: #fff;
+}
+
+img {
+    max-width: 100%
 }

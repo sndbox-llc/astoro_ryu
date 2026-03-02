@@ -1,18 +1,12 @@
 ---
-import Layout from '../components/Layout.astro' // Layoutをインポート
-// 必要ならここで getCollection してブログ一覧のデータを取る
-const showBanner = true // トップページ専用のバナーを表示するためのフラグ
-
+import Layout from '../components/Layout.astro'
 import { getCollection } from 'astro:content'
 
 const allBlogPosts = await getCollection('blog')
 
-// 配列を一度コピーしてからソートする（これが重要！）
 const sortedPosts = [...allBlogPosts].sort((a, b) => {
   const dateA = new Date(a.data.date).getTime()
   const dateB = new Date(b.data.date).getTime()
-
-  // 新しい順（降順）なら B - A
   return dateB - dateA
 })
 ---
