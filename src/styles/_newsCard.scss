@@ -1,4 +1,4 @@
-@use "variables" as var; // 'var'という名前でアクセスできるようにします
+@use 'variables' as var; // 'var'という名前でアクセスできるようにします
 
 .news-section {
   padding: 4rem 0;
